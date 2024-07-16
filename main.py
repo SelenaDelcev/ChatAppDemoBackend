@@ -12,6 +12,8 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
+
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
@@ -30,6 +32,7 @@ messages = [
     {"role": "system", "content": "You are a helpful assistant that always writes in Serbian."}
 ]
 
+# Test
 @app.post('/chat')
 async def chat_with_ai(message: Message):
     try:
